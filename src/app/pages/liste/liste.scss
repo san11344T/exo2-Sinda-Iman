@@ -1,0 +1,38 @@
+.liste-container {
+  padding: 30px;
+  text-align: center;
+}
+
+.film-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  li a {
+    cursor: pointer;
+    font-weight: bold;
+    color: #3a3a3a;
+    text-decoration: none;
+
+    &:hover {
+      color: #b07d62;
+    }
+  }
+}
+
+.film-details {
+  margin-top: 30px;
+
+  h2 {
+    color: #d4a373;
+    margin-bottom: 15px;
+  }
+
+  img {
+    max-width: 250px;
+    border-radius: 12px;
+  }
+}

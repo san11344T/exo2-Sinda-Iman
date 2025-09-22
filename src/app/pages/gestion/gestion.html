@@ -1,0 +1,17 @@
+<div class="gestion-container">
+  @if (lastFormData) {
+    <h2>Dernier formulaire envoyé</h2>
+    <p><strong>Prénom :</strong> {{ lastFormData.prenom }}</p>
+    <p><strong>Nom :</strong> {{ lastFormData.nom }}</p>
+    <p><strong>Âge :</strong> {{ lastFormData.age }}</p>
+    @if (lastFormData.email) {
+      <p><strong>Email :</strong> {{ lastFormData.email }}</p>
+    }
+    <p><strong>Commentaire :</strong> {{ lastFormData.commentaire }}</p>
+  } @else {
+    <div class="non">
+      <h2>404 not found</h2>
+      <img src="assets/page404.gif" alt="not found">
+    </div>
+  }
+</div>

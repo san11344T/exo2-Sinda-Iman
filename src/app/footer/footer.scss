@@ -1,0 +1,19 @@
+.footer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.bouton-contact {
+    background-color: #d4a373;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+
+&:hover {
+    background-color: #b07d62;
+}
+
+}

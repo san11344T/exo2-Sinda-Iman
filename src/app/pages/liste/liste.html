@@ -1,0 +1,16 @@
+<div class="liste-container">
+  <ul class="film-list">
+    @for (film of films; track film) {
+      <li>
+        <a (click)="afficherFilm(film)">{{ film.titre }}</a>
+      </li>
+    }
+  </ul>
+
+  @if (selectedFilm) {
+    <div class="film-details">
+      <h2>{{ selectedFilm.titre }}</h2>
+      <img [src]="selectedFilm.image" alt="affiche du film">
+    </div>
+  }
+</div>

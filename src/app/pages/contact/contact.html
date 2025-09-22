@@ -1,0 +1,40 @@
+<div class="form-container">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+    <label>Prénom *</label>
+    <input type="text" formControlName="prenom">
+    <div *ngIf="contactForm.get('prenom')?.invalid && contactForm.get('prenom')?.touched" class="error">
+    </div>
+
+    <label>Nom *</label>
+    <input type="text" formControlName="nom">
+    <div *ngIf="contactForm.get('nom')?.invalid && contactForm.get('nom')?.touched" class="error">
+    </div>
+
+    <label>Âge</label>
+    <input type="number" formControlName="age">
+
+    <label class="checkbox-label">
+      <input type="checkbox" (change)="toggleEmail()"> Masquer l'Email
+    </label>
+
+    @if (!hideEmail) {
+      <label>Email *</label>
+      <input type="email" formControlName="email">
+      <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error">
+        <small *ngIf="contactForm.get('email')?.errors?.['required']">L'email est obligatoire</small>
+        <small *ngIf="contactForm.get('email')?.errors?.['email']">L'email doit contenir un "@"</small>
+      </div>
+    }
+
+    <label>Commentaire *</label>
+    <textarea formControlName="commentaire"></textarea>
+    <div *ngIf="contactForm.get('commentaire')?.invalid && contactForm.get('commentaire')?.touched" class="error">
+    </div>
+
+    <!-- <pre>{{ contactForm.value | json }}</pre> -->
+
+    <p> * : Champ Obligatoire</p>
+    <button type="submit" [disabled]="!contactForm.valid">Envoyer</button>
+  </form>
+</div>
