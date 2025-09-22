@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   selector: 'app-gestion',
   imports: [],
   templateUrl: './gestion.html',
-  styleUrl: './gestion.scss'
+  styleUrls: ['./gestion.scss']
 })
 export class Gestion implements OnInit {
   public lastFormData: any = null;
@@ -15,7 +15,7 @@ export class Gestion implements OnInit {
 
   ngOnInit(): void {
     this.lastFormData = this.contactService.getFormData();
-    if (this.lastFormData) {
+    if (!this.lastFormData) {
       this.router.navigate(['/page404']);
     }
   }

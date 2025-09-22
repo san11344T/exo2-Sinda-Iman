@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-page404',
   imports: [],
   templateUrl: './page404.html',
-  styleUrl: './page404.scss'
+  styleUrls: ['./page404.scss']
 })
 export class Page404 {
 

@@ -1,2 +1,25 @@
+.non {
+  display: flex; 
+  margin-top: 0px;               
+  flex-direction: column;
+  align-items: center;      
+  justify-content: center;  
+  height: 100vh;           
+  text-align: center;      
+}
 
+.non h2 {
+  color: pink;                  
+  -webkit-text-stroke: 2px #d4a373; 
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.non img {
+  margin-top: 15px;
+  max-width: 500px;        
+  width: 80%;               
+  border-radius: 12px;
+  border: 2px solid #d4a373;
+}
 

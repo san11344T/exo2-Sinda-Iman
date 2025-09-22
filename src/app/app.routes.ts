@@ -12,6 +12,6 @@ export const routes: Routes = [
     { path: 'liste', component: Liste },
     { path: 'contact', component: Contact },
     { path: 'gestion', component: Gestion },
-    { path: '404' , component: Page404},
+    { path: 'page404' , component: Page404},
     { path: '**', redirectTo: 'accueil' }
 ];
