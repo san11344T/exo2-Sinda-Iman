@@ -1,19 +1,21 @@
-import {Component} from '@angular/core';
-import {FormControl, FormGroup, Validators, ReactiveFormsModule} from "@angular/forms";
-import {Router, RouterLink, RouterOutlet} from "@angular/router";
-import {JsonPipe} from "@angular/common";
-import {ContactService} from "../../services/contact.service";
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from "@angular/forms";
+import { Router, RouterLink, RouterOutlet } from "@angular/router";
+import { CommonModule, JsonPipe } from "@angular/common";
+import { ContactService } from "../../services/contact.service";
+import { ContactData } from '../../services/contact-data'; 
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.html',
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     RouterLink,
     RouterOutlet,
     JsonPipe
   ],
-  styleUrl: './contact.scss'
+  styleUrls: ['./contact.scss']
 })
 export class Contact {
   public hideEmail: boolean = false;
@@ -21,7 +23,7 @@ export class Contact {
   public contactForm = new FormGroup({
     prenom: new FormControl('', Validators.required),
     nom: new FormControl('', Validators.required),
-    age: new FormControl(''),
+    age: new FormControl('', [Validators.min(0)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     commentaire: new FormControl('', Validators.required),
   });
@@ -42,7 +44,8 @@ export class Contact {
 
   public onSubmit() {
     if (this.contactForm.valid) {
-      this.contactService.setFormData(this.contactForm.value);
+      const formData: ContactData = this.contactForm.value as ContactData; 
+      this.contactService.setFormData(formData);
       alert("Le formulaire est valide");
       this.router.navigate(['/accueil']);
     }

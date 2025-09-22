@@ -1,23 +1,24 @@
 import { Component } from '@angular/core';
+import { Film } from '../../film'; 
 
 @Component({
   selector: 'app-liste',
-  imports: [],
   templateUrl: './liste.html',
-  styleUrl: './liste.scss'
+  styleUrls: ['./liste.scss']
 })
 export class Liste {
-   public films = [
+  public films: Film[] = [
     { titre: 'Clueless', image: 'assets/clueless.jpg' },
     { titre: 'La La Land', image: 'assets/lalaland.jpg' },
     { titre: 'Mean Girls', image: 'assets/meangirls.jpeg' },
-    { titre: 'La vita è bella ', image: 'assets/lavitaebella.jpg' },
+    { titre: 'La vita è bella', image: 'assets/lavitaebella.jpg' },
     { titre: 'Oppeinheimer', image: 'assets/oppeinheimer.jpg' },
   ];
 
-  public selectedFilm: any = null;
+  public selectedFilm: Film | null = null; 
 
-  public afficherFilm(film: any) {
+  public afficherFilm(film: Film) {  
     this.selectedFilm = film;
   }
 }
+
