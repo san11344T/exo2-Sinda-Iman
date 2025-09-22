@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators, ReactiveFormsModule } from "@angula
 import { Router, RouterLink, RouterOutlet } from "@angular/router";
 import { CommonModule, JsonPipe } from "@angular/common";
 import { ContactService } from "../../services/contact.service";
-import { ContactData } from '../../services/contact-data'; 
+import { ContactData } from '../../interfaces/contact-data'; 
 
 @Component({
   selector: 'app-contact',

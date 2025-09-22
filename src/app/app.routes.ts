@@ -3,6 +3,7 @@ import { Accueil} from './pages/accueil/accueil';
 import { Liste} from './pages/liste/liste';
 import { Contact} from './pages/contact/contact';
 import { Gestion} from './pages/gestion/gestion';
+import { Page404} from './pages/page404/page404';
 
 
 export const routes: Routes = [
@@ -11,5 +12,6 @@ export const routes: Routes = [
     { path: 'liste', component: Liste },
     { path: 'contact', component: Contact },
     { path: 'gestion', component: Gestion },
+    { path: '404' , component: Page404},
     { path: '**', redirectTo: 'accueil' }
 ];
