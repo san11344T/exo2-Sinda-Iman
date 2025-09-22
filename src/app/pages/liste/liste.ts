@@ -12,7 +12,7 @@ export class Liste {
     { titre: 'La La Land', image: 'assets/lalaland.jpg' },
     { titre: 'Mean Girls', image: 'assets/meangirls.jpeg' },
     { titre: 'La vita è bella', image: 'assets/lavitaebella.jpg' },
-    { titre: 'Oppeinheimer', image: 'assets/oppeinheimer.jpg' },
+    { titre: 'Oppenheimer', image: 'assets/oppeinheimer.jpg' },
   ];
 
   public selectedFilm: Film | null = null; 

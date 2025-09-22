@@ -7,18 +7,34 @@
   list-style: none;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
 
   li a {
-    cursor: pointer;
+    display: block;
+    width: 150px;            
+    padding: 20px;
+    border: 2px solid #d4a373;
+    border-radius: 12px;
+    background-color: #fafafa;
+    text-align: center;
     font-weight: bold;
     color: #3a3a3a;
     text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
 
     &:hover {
-      color: #b07d62;
+      transform: scale(1.05);   
+      background-color: #f0e5d4;
+      color: #b07d62;           
+    }
+
+    &:active {
+      transform: scale(0.95);    
+      background-color: #e8d8b7;
     }
   }
 }
@@ -34,5 +50,6 @@
   img {
     max-width: 250px;
     border-radius: 12px;
+    border: 2px solid #d4a373;
   }
 }
